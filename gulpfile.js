@@ -88,20 +88,9 @@ gulp.task('minify', gulp.series('minifyCSS', 'minifyJS'));
  * -----------------------
  * Commande d'AUTOMATISATION
  * ---
- * - $ gulp sync => actualisation navigateurs
  * - $ gulp watch => activation des commandes de GÉNÉRATION
  * -----------------------
  */
-
-gulp.task('sync', gulp.series('php'), function () {
-    browserSync({
-        server: {
-            baseDir: './',
-            proxy: 'localhost',
-            port: 8888
-        },
-    })
-});
 
 gulp.task('watch', function () {
     gulp.watch('./dist/sass/**/*.scss', gulp.series('css'))
